@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel101 – Welcome Home</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ["Inter", "sans-serif"],
+          },
+          colors: {
+            primary: "#0033cc",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="font-inter text-gray-800">
+
+  <header class="flex justify-between items-center p-6 bg-white shadow-md">
+    <div class="text-2xl font-bold text-primary">Hotel101</div>
+    <nav class="space-x-6 text-sm">
+      <a href="#about" class="text-gray-700 hover:text-primary">About</a>
+      <a href="#rooms" class="text-gray-700 hover:text-primary">Rooms</a>
+      <a href="#reserve" class="text-gray-700 hover:text-primary">Reserve</a>
+    </nav>
+    <div class="flex items-center gap-4 text-sm">
+      <a href="#" class="text-gray-700 hover:text-primary">My Account</a>
+      <select class="border px-2 py-1 rounded">
+        <option>EN</option>
+        <option>DE</option>
+      </select>
+    </div>
+  </header>
+
+  <section class="relative bg-cover bg-center flex items-center justify-center" style="background-image:url('https://source.unsplash.com/1600x900/?hotel,lobby'); min-height: 70vh;">
+    <div class="flex justify-center px-4 py-8 mt-48">
+      <form id="reservation-form" class="w-full max-w-md space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="checkin" class="block text-sm font-medium text-gray-700 mb-1">Check-in Date</label>
+            <input type="date" id="checkin" name="checkin" class="border px-2 py-1 rounded w-full text-sm" required />
+          </div>
+          <div>
+            <label for="checkout" class="block text-sm font-medium text-gray-700 mb-1">Check-out Date</label>
+            <input type="date" id="checkout" name="checkout" class="border px-2 py-1 rounded w-full text-sm" required />
+          </div>
+          <div>
+            <label for="guests" class="block text-sm font-medium text-gray-700 mb-1">Guests</label>
+            <select id="guests" name="guests" class="border px-2 py-1 rounded w-full text-sm" required>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+            </select>
+          </div>
+          <div>
+            <label for="room" class="block text-sm font-medium text-gray-700 mb-1">Room Type</label>
+            <select id="room" name="room" class="border px-2 py-1 rounded w-full text-sm" required>
+              <option value="single">Single Room</option>
+              <option value="double">Double Room</option>
+              <option value="suite">Suite</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+          <input type="text" id="name" name="name" class="border px-2 py-1 rounded w-full text-sm" required />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+          <input type="email" id="email" name="email" class="border px-2 py-1 rounded w-full text-sm" required />
+        </div>
+        <div>
+          <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+          <input type="tel" id="phone" name="phone" class="border px-2 py-1 rounded w-full text-sm" />
+        </div>
+        <div>
+          <label for="requests" class="block text-sm font-medium text-gray-700 mb-1">Special Requests</label>
+          <textarea id="requests" name="requests" rows="2" class="border px-2 py-1 rounded w-full text-sm" placeholder="Late check-in, high floor, etc."></textarea>
+        </div>
+        <div>
+          <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded text-sm font-medium hover:bg-blue-700">Book Now</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="about" class="py-20 px-6 bg-gray-50">
+    <h2 class="text-xl font-bold mb-4">About Hotel101</h2>
+    <p>Welcome to your home away from home. Hotel101 offers modern comfort and convenience in every location.</p>
+  </section>
+
+  <section id="rooms" class="py-20 px-6">
+    <h2 class="text-xl font-bold mb-4">Rooms</h2>
+    <p>Choose from single, double, or luxury suites designed for comfort and relaxation.</p>
+  </section>
+
+  <section id="reserve" class="py-20 px-6 bg-gray-100">
+    <h2 class="text-xl font-bold mb-4">Reserve Now</h2>
+    <p>Use the form above to reserve your stay at Hotel101.</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
